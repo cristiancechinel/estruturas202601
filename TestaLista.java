@@ -7,15 +7,26 @@ public class TestaLista {
     public static void main(String[] args){
     
     
-        ListaEncadeada lista = new ListaEncadeada();
+        ListaEncadeada02 lista = new ListaEncadeada02();
       
-        lista.insereOrdenado(6);
-        lista.insereOrdenado(88);
-        lista.insereOrdenado(50);
-        lista.insereOrdenado(25);
+        
+        lista.insereInicio(5);
+        lista.insereInicio(10);
+        lista.imprime();
+        
+        lista.insereFinal(55);
+        lista.insereFinal(80);
         
         lista.imprime();
-      /*  lista.insereInicio(15);
+ 
+        System.out.println("removeu ultimo " + lista.removeFinal());
+        System.out.println("removeu ultimo " + lista.removeFinal());
+        lista.imprime();
+        
+        lista.insereFinal(33);
+        lista.imprime(); 
+        
+        /*  lista.insereInicio(15);
         lista.insereInicio(26);
         lista.insereInicio(55);
                 

@@ -43,8 +43,7 @@ public class ListaEncadeada02 {
         
         
     }
-    
-    
+        
     void insereFinal(int valor){
         Nodo novo = new Nodo();
         novo.dado = valor; 
@@ -58,7 +57,29 @@ public class ListaEncadeada02 {
             ultimo.prox = novo;
             ultimo = novo;
         }
+    }
     
+    Integer removeFinal(){        
+        if (inicio != null){ //existe elemento
+            if (inicio == ultimo){//somente 1
+                int n = ultimo.dado;
+                inicio = ultimo = null;
+                return n;
+            }
+            else{
+                Nodo temp = inicio; 
+                Nodo ant = null;              
+                while (temp != ultimo){
+                    ant = temp;
+                    temp = temp.prox;
+                }
+                int n = ultimo.dado;
+                ant.prox = null;
+                ultimo = ant;
+                return n;
+            }
+        }       
+        return null;
     
     
     
@@ -67,9 +88,10 @@ public class ListaEncadeada02 {
     
     
     }
-  
     
-   
+    
+  
+
    
     void imprime(){
             for (Nodo temp = inicio; temp != null; temp = temp.prox){
