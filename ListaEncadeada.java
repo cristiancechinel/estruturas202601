@@ -5,6 +5,7 @@ public class ListaEncadeada {
     
     private Nodo inicio;
     
+    
     private class Nodo{
         Integer dado;
         Nodo prox; 
@@ -52,7 +53,29 @@ public class ListaEncadeada {
         return retira;
     }
     
-    
+    void insereOrdenado(int n){
+        
+        Nodo temp = inicio; 
+        Nodo ant = null; 
+        
+        Nodo novo = new Nodo();
+        novo.dado = n;
+        
+        while (temp != null && temp.dado < n){
+            ant = temp;
+            temp = temp.prox;
+        }
+        
+        if (ant == null) {//insere na primeira posição. 
+            novo.prox = temp;
+            inicio = novo;
+        }
+        else{
+            novo.prox = temp;
+            ant.prox = novo;
+        }
+   
+    }
     
    
     void imprime(){
