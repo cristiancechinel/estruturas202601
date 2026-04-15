@@ -9,6 +9,41 @@ public class ListaDuplamenteEncadeada {
         Integer dado;
     }
     
+    Integer removeFinal(){
+        if (inicio == null) return null; 
+        
+        Integer retirar = ultimo.dado;
+        if (inicio == ultimo){ // contem 1 elemento
+            inicio = ultimo = null;
+        }
+        else{
+            ultimo = ultimo.ant;
+            ultimo.prox = null;
+        }
+        return retirar; 
+    }
+    
+    
+    Integer removeInicio(){
+        if (inicio == null) 
+            return null; //lista vazia
+        
+        Integer retirar = inicio.dado;
+        if (inicio == ultimo ){ //possui 1 elemento apenas
+            inicio = ultimo = null;
+        }      
+        else{
+            inicio = inicio.prox;
+            inicio.ant = null;
+        } 
+            
+        return retirar; 
+    
+    
+    
+    
+    }
+    
     void insereFinal(int valor){
         Nodo novo = new Nodo();
         novo.dado = valor;
