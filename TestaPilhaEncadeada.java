@@ -20,6 +20,17 @@ public class TestaPilhaEncadeada {;
         p.imprimePilha();
         p.desempilha();
         p.imprimePilha();
+        
+        FilaEncadeada fila = new FilaEncadeada();
+        fila.insereFinal(70);
+        fila.insereFinal(88);
+        fila.insereFinal(999);
+        fila.imprimeFila();
+        fila.removeInicio();
+        fila.imprimeFila();
+        fila.removeInicio();
+        fila.imprimeFila();
+              
 
         
     
