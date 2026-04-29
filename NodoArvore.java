@@ -23,8 +23,28 @@ public class NodoArvore {
             imprimePre(a.dir);
             System.out.print(">");
         }
+    }
     
+    void imprimeSim(NodoArvore a){
     
+        if (a != null){
+            System.out.print("<");
+            imprimeSim(a.esq);
+            System.out.print(a.valor);
+            imprimeSim(a.dir);
+            System.out.print(">");
+        }
+    }
+    
+    void imprimePos(NodoArvore a){
+    
+        if (a != null){
+            System.out.print("<");
+            imprimePos(a.esq);
+            imprimePos(a.dir);
+            System.out.print(a.valor);
+            System.out.print(">");
+        }
     }
     
     
