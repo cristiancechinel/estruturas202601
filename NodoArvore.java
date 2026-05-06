@@ -61,4 +61,16 @@ public class NodoArvore {
     }
     
     
+    NodoArvore insere(NodoArvore atual, int valor){
+        if (atual == null)
+            atual = new NodoArvore(valor, null, null);
+        else
+            if (valor < atual.valor)//insere esquerda
+                atual.esq = insere(atual.esq, valor);
+            else //insere direita
+                atual.dir = insere(atual.dir, valor);
+                
+        return atual;
+    }
+    
 }

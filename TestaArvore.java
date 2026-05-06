@@ -13,18 +13,37 @@ public class TestaArvore {
     
     public static void main(String[] args){
     
+        ArvoreBinaria arv = new ArvoreBinaria();
         
-        NodoArvore c = new NodoArvore(3, null, null);
-        NodoArvore e = new NodoArvore(13, null, null);
-        NodoArvore f = new NodoArvore(15, null, null);
+        arv.insere(100);
+        arv.insere(200);
+        arv.insere(50);
+        
+        arv.imprimePre();
+        
+        arv.imprimePos();
+        
+        arv.imprimeSimetrico();
+        
+       // NodoArvore a = new NodoArvore(80, null, null);
+        
+      //  a = a.insere(a, 90);
+        //a = a.insere(a, 70);
+      //  a = a.insere(a, 85);
+        
+        //NodoArvore c = new NodoArvore(3, null, null);
+       //NodoArvore e = new NodoArvore(13, null, null);
+       // NodoArvore f = new NodoArvore(15, null, null);
 
-        NodoArvore b = new NodoArvore(5, c, null);
-        NodoArvore d = new NodoArvore(10, e, f);
+       // NodoArvore b = new NodoArvore(5, c, null);
+       // NodoArvore d = new NodoArvore(10, e, f);
         
-        NodoArvore a = new NodoArvore(8, b, d);
+       // NodoArvore a = new NodoArvore(8, b, d);
         
-        a.imprimePre(a);
+      //  a.imprimePre(a);
+      //  System.out.println();
         
+     //   a.imprimeSim(a);
         
         //System.out.println(a.buscaArvore(a, 10));
         
