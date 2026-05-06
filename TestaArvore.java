@@ -18,12 +18,18 @@ public class TestaArvore {
         arv.insere(100);
         arv.insere(200);
         arv.insere(50);
+        arv.insere(25);
+        arv.insere(60);
+        arv.insere(65);
         
         arv.imprimePre();
         
-        arv.imprimePos();
+        arv.remove(100);
+        arv.imprimePre();
         
-        arv.imprimeSimetrico();
+//        arv.imprimePos();
+        
+//        arv.imprimeSimetrico();
         
        // NodoArvore a = new NodoArvore(80, null, null);
         

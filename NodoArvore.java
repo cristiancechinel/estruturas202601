@@ -73,4 +73,31 @@ public class NodoArvore {
         return atual;
     }
     
+    NodoArvore remove(NodoArvore nodo, int numero){
+        if (nodo == null) return null;
+        else if (numero < nodo.valor)// remove esquerda
+                nodo.esq = remove(nodo.esq, numero);
+        else if (numero > nodo.valor)// remove direita
+                    nodo.dir = remove(nodo.dir, numero);
+        else //encontrou
+           if (nodo.esq == null && nodo.dir == null) //não tem filhos
+               return null;
+           else
+               if (nodo.dir == null) //tem filho na esquerda
+                   return nodo.esq;
+               else if (nodo.esq == null)// tem filho na direito
+                   return nodo.dir;
+               else { //dois filhos // maior elemento da subarvore da esquerda
+                   NodoArvore temp = nodo.esq;
+                   while (temp.dir != null)
+                       temp = temp.dir;
+                   
+                   nodo.valor = temp.valor;
+                   temp.valor= numero; 
+                   
+                   nodo.esq = remove(nodo.esq, numero);
+               }
+        return nodo;
+    }
+                
 }

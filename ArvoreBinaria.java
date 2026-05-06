@@ -17,6 +17,12 @@ public class ArvoreBinaria {
         else 
             this.raiz.insere(raiz, v);
     }
+    
+    void remove(int v){
+        if (this.raiz != null)
+            this.raiz = this.raiz.remove(raiz, v);
+    
+    }
 
     void imprimePre(){
         if (this.raiz != null)
