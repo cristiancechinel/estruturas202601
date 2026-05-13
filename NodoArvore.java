@@ -47,6 +47,27 @@ public class NodoArvore {
         }
     }
     
+    int maior(NodoArvore a){
+    
+        NodoArvore temp = a;
+        
+        while (temp.dir != null)
+            temp = temp.dir;
+    
+        return temp.valor;
+
+    
+    }
+    
+    
+    int quantidade(NodoArvore a){
+        if (a == null) 
+            return 0;
+        else
+            return 1 + quantidade(a.esq) + quantidade(a.dir);
+    }
+    
+    
     
     boolean buscaArvore(NodoArvore a, int valor){
         if (a == null) 
