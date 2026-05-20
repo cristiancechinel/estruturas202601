@@ -13,11 +13,30 @@ public class TestaNodoAvl {
     
     public static void main(String[] args){
     
-        NodoAVL arv = new NodoAVL(80, null, null);
-        arv = arv.insereBalanceado(arv, 70);
-        arv = arv.insereBalanceado(arv, 75);
         
-        arv.imprimePre(arv);
+        ArvoreAVL a = new ArvoreAVL();
+        a.insere(8);
+        a.insere(5);
+        a.insere(10);
+        a.insere(6);
+        a.insere(3);
+        
+        a.imprimePre();
+        a.remove(10);
+        
+        a.imprimePre();
+        
+      //  NodoAVL arv = new NodoAVL(8, null, null);
+     //   arv = arv.insereBalanceado(arv, 5);
+     //   arv = arv.insereBalanceado(arv, 10);
+    //    arv = arv.insereBalanceado(arv,6);
+    //    arv = arv.insereBalanceado(arv,3);
+        
+        
+    ///    arv.imprimePre(arv);
+        
+     //   arv = arv.remove(arv, 10);
+     //   arv.imprimePre(arv);
        
     
     

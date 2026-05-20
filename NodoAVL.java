@@ -169,10 +169,32 @@ public class NodoAVL {
     
     NodoAVL remove(NodoAVL nodo, int numero){
         if (nodo == null) return null;
-        else if (numero < nodo.valor)// remove esquerda
+        else if (numero < nodo.valor){// remove esquerda
                 nodo.esq = remove(nodo.esq, numero);
-        else if (numero > nodo.valor)// remove direita
-                    nodo.dir = remove(nodo.dir, numero);
+                if (altura(nodo.esq) - altura(nodo.dir) == -2)
+                    if (altura(nodo.dir.esq) - altura(nodo.dir.dir) == 1){
+                        nodo = rotacaoDireitaEsquerda(nodo);//rotacao dupla
+                         System.out.println("rotacao direita esquerda");
+                    }
+                    else {
+                        nodo = rotacaoEsquerda(nodo);//rotacao simples
+                        System.out.println("rotacao esquerda");   
+                    }
+        }
+        else if (numero > nodo.valor){// remove direita
+                nodo.dir = remove(nodo.dir, numero);
+                if (altura(nodo.esq) - altura(nodo.dir) ==  2)
+                    if (altura(nodo.esq.esq) - altura(nodo.esq.dir) == -1){
+                        nodo = rotacaoEsquerdaDireita(nodo); //rotacao dupla
+                        System.out.println("rotacao esquerda direita");       
+                    }
+                    else {
+                        nodo = rotacaoDireita(nodo);    //rotacao simples
+                         System.out.println("rotacao direita");
+                    }
+        }
+                
+        
         else //encontrou
            if (nodo.esq == null && nodo.dir == null) //não tem filhos
                return null;
