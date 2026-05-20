@@ -14,15 +14,11 @@ public class TestaNodoAvl {
     public static void main(String[] args){
     
         NodoAVL arv = new NodoAVL(80, null, null);
-        arv.insere(arv, 70);
-        arv.insere(arv, 60);
+        arv = arv.insereBalanceado(arv, 70);
+        arv = arv.insereBalanceado(arv, 75);
         
         arv.imprimePre(arv);
-        
-        arv = arv.rotacaoEsquerda(arv);
-        System.out.println();
-   
-        arv.imprimePre(arv);
+       
     
     
     }

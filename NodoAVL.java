@@ -13,6 +13,19 @@ public class NodoAVL {
         this.dir = dir;
     }
     
+    NodoAVL rotacaoDireitaEsquerda(NodoAVL a){
+        a.dir = rotacaoDireita(a.dir);
+        a = rotacaoEsquerda(a);
+        return a;  
+    }
+    
+    NodoAVL rotacaoEsquerdaDireita(NodoAVL a){
+        a.esq = rotacaoEsquerda(a.esq);
+        a = rotacaoDireita(a);
+        return a;
+    }
+    
+    
     NodoAVL rotacaoEsquerda(NodoAVL a){
         NodoAVL aux = a.dir;
         a.dir = aux.esq;
@@ -26,11 +39,21 @@ public class NodoAVL {
         a.esq = aux.dir;
         aux.dir = a;
         return aux;
-     
-        
-    
     }
+  
     
+    int max (int a , int b){
+        if (a > b) return a;
+        else return b;
+    }
+
+    int altura(NodoAVL a){
+        if (a == null) 
+            return -1;
+        else
+            return 1 + max(altura(a.esq), altura(a.dir));
+    }
+
     
     void imprimePre(NodoAVL a){
     
@@ -64,6 +87,38 @@ public class NodoAVL {
             System.out.print(">");
         }
     }
+    
+    NodoAVL insereBalanceado(NodoAVL a, int valor){
+        if (a == null) 
+            a = new NodoAVL(valor, null, null);
+        else
+            if (valor < a.valor){ //insere esquerda
+               a.esq = insereBalanceado(a.esq, valor);
+               if (altura(a.esq) - altura(a.dir) == 2)
+                   if (valor < a.esq.valor){//rotacao simples direita
+                       a = rotacaoDireita(a);
+                       System.out.println("rotacao direita");
+                   }
+                   else {// rotacao dupla
+                       a = rotacaoEsquerdaDireita(a);
+                       System.out.println("rotacao esq direita");
+                   }
+            }
+            else{ //insere direita
+               a.dir = insereBalanceado(a.dir, valor);
+               if (altura(a.esq) - altura(a.dir) == -2)
+                   if (valor > a.dir.valor){//rotacao simples esquerda
+                       a = rotacaoEsquerda(a);
+                       System.out.println("rotacao esquerda");
+                   }
+                   else{ //rotacao dupla
+                       a = rotacaoDireitaEsquerda(a);
+                       System.out.println("rotacao dir esquerda");
+                   }
+            }    
+        return a;        
+   }
+    
     
     int maior(NodoAVL a){
     
@@ -99,7 +154,7 @@ public class NodoAVL {
     
     }
     
-    
+    /*
     NodoAVL insere(NodoAVL atual, int valor){
         if (atual == null)
             atual = new NodoAVL(valor, null, null);
@@ -110,7 +165,7 @@ public class NodoAVL {
                 atual.dir = insere(atual.dir, valor);
                 
         return atual;
-    }
+    }*/
     
     NodoAVL remove(NodoAVL nodo, int numero){
         if (nodo == null) return null;
