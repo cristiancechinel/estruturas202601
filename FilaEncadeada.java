@@ -9,6 +9,10 @@ public class FilaEncadeada {
         lista = new ListaDuplamenteEncadeada();
     }
 
+    boolean fila_vazia(){
+        return lista.lista_vazia();
+    }
+    
     void insereFinal(Integer valor){
         lista.insereFinal(valor);
     }

@@ -9,6 +9,11 @@ public class ListaDuplamenteEncadeada {
         Integer dado;
     }
     
+    boolean lista_vazia(){
+        //if (inicio == null) return true;
+        return inicio == null;
+    }
+    
     Integer removeFinal(){
         if (inicio == null) return null; 
         

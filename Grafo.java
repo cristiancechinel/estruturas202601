@@ -11,6 +11,10 @@ public class Grafo {
         this.matriz = new int[this.V][this.V];
     }
 
+    int getV(){
+        return this.V;
+    
+    }
     void setV(int V){
         if (V >= 1) this.V = V;
         else this.V = 1;
