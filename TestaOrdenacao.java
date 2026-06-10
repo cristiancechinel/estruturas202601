@@ -6,11 +6,11 @@ public class TestaOrdenacao {
     public static void main(String[] args){
     
        
-        Ordenacao o = new Ordenacao();
+        MergeSort o = new MergeSort();
         
-        int vet[] = {8, 10, 15, 2, 5};
+        int vet[] = {8, 222, 16, 20, 1, 18, 35, 40};
        
-        o.insertionSort(vet);
+        o.mergeSort(vet, 0, 7);
         o.imprimeVet(vet);
     
     
